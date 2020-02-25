@@ -1,5 +1,6 @@
 package com.codeclan.example.files_and_folders.components;
 
+import com.codeclan.example.files_and_folders.models.File;
 import com.codeclan.example.files_and_folders.models.Folder;
 import com.codeclan.example.files_and_folders.models.User;
 import com.codeclan.example.files_and_folders.repositories.FileRepository;
@@ -29,5 +30,8 @@ public class DataLoader implements ApplicationRunner {
 
         Folder stuff = new Folder("Stuff", andy);
         folderRepository.save(stuff);
+
+        File thing = new File("Thing", ".txt", 200, stuff);
+        fileRepository.save(thing);
     }
 }
